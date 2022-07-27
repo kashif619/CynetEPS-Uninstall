@@ -1,0 +1,11 @@
+---
+- name: uninstall cynet package
+  become: yes
+  hosts: sandeep
+  tasks:
+  - name: uninstall cynet package
+    yum: name=CynetEPS state=absent
+  - name: removing the cynet
+    file:
+      path=/opt/centos7cynet.sh state=absent
+    
